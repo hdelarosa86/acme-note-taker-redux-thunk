@@ -5,6 +5,7 @@ import { HashRouter, Link, Route } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import Form from './Form';
+
 const getNotes = () => {
   return async (dispatch, getState) => {
     const notes = (await axios.get(`${API}/users/${getState().auth.id}/notes`))
